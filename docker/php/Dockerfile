@@ -11,7 +11,5 @@ RUN echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)"
     echo "xdebug.remote_port=9015" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
     echo "xdebug.remote_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
-RUN mkdir /app
-ADD . /app
 WORKDIR /app/
-CMD ["php-fpm"]
+ADD . /app
